@@ -24,7 +24,7 @@ export function Login() {
     let handleLogin = () => {
         let {userName, passWord} = Form;
         if (userName === 'admin' && passWord === 'admin') {
-            navigate('/Home')
+            navigate('/home')
         }else{alert('Invalid username or password')}
     }
 
@@ -39,7 +39,7 @@ export function Login() {
             <button onClick={handleLogin}>Login</button>
             <br/>
             <button onClick={() => {
-                navigate('/Register')
+                navigate('/register')
             }}>Register
             </button>
         </>

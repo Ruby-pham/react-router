@@ -9,7 +9,7 @@ export function Register(){
             <button>Register</button>
             <br/>
             <button onClick={()=>{
-                navigate('/Login')
+                navigate('/')
             }}>Login</button>
 
         </>
