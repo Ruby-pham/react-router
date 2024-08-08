@@ -1,20 +1,13 @@
 import {Link, useNavigate} from "react-router-dom";
-import {useState} from "react";
- const studentList=[
-    {
-        id:'C03_1',
-        name:'Mary Smith',
-        class:'C03',
-        email:'mary@gmail.com',
-        phone:'097123456'
-
-    }
-];
- // export default studentList;
+import {useEffect, useState} from "react";
+import {StudentData} from "./StudentData";
 
 export function Student(props){
-    let[students, setStudents]=useState(studentList)
+    let[students, setStudents]=useState([])
     let navigate = useNavigate()
+    useEffect(() => {
+        setStudents(StudentData)
+    }, []);
     let handleOnClick=(student)=>{
         navigate('/admin/students/detail',{state:{student}})
     }
@@ -38,7 +31,7 @@ export function Student(props){
                         <th>Class</th>
                         <th>Email</th>
                         <th>Phone</th>
-                        <th>Action</th>
+                        <th colSpan={3}>Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -52,6 +45,8 @@ export function Student(props){
                                 <td>{student.email}</td>
                                 <td>{student.phone}</td>
                                 <td><button onClick={()=>handleOnClick(student)}>Detail</button></td>
+                                <td><button>Edit</button></td>
+                                <td><button>Delete</button></td>
                             </tr>
                         </>
                     ))}

@@ -1,33 +1,50 @@
 import './App.css';
-import {User} from "./Components-2/User/User";
 import {Route, Routes} from "react-router-dom";
-import {Header} from "./Components-2/User/Header";
-import {Footer} from "./Components-2/User/Footer";
-import {Main} from "./Components-2/User/Main";
-import {DetailProduct} from "./Components-2/User/DetailProduct";
-import {HotProduct} from "./Components-2/User/HotProduct";
-import {Category} from "./Components-2/User/Category";
-import {Admin} from "./Components-2/Admin";
-
+import {Home} from "./Components-3/Home";
+import {Detail} from "./Components-3/Detail";
+import {Main} from "./Components-3/Main";
+import {Cart} from "./Components-3/Cart";
+import {LogIn} from "./Components-3/LogIn";
+import {Register} from "./Components-3/Register";
 
 function App() {
     return (
 
         //Outlet
 
+        // Component-3
+
         <div className="App">
             <>
                 <Routes>
-                    <Route path={'/admin'} element={<Admin/>}/>
-                    <Route path={'/user'} element={<User/>}>
+                    <Route path={'/'} element={<Home/>}>
                         <Route index element={<Main/>}/>
-                        <Route path={'detail-product'} element={<DetailProduct/>}/>
-                        <Route path={'hot-product'} element={<HotProduct/>}/>
-                        <Route path={'category'} element={<Category/>}/>
+                        <Route path={'detail'} element={<Detail/>}/>
+                        <Route path={'cart'} element={<Cart/>}/>
+                        <Route path={'login'} element={<LogIn/>}/>
+                        <Route path={'register'} element={<Register/>}/>
                     </Route>
                 </Routes>
             </>
         </div>
+
+        // Component-2
+
+        // <div className="App">
+        //     <>
+        //         <Routes>
+        //             <Route path={'/admin'} element={<Admin/>}/>
+        //             <Route path={'/user'} element={<User/>}>
+        //                 <Route index element={<Main/>}/>
+        //                 <Route path={'detail-product'} element={<DetailProduct/>}/>
+        //                 <Route path={'hot-product'} element={<HotProduct/>}/>
+        //                 <Route path={'category'} element={<Category/>}/>
+        //             </Route>
+        //         </Routes>
+        //     </>
+        // </div>
+
+        // Component-1
 
         // <div className="App">
         //     <>
@@ -42,7 +59,7 @@ function App() {
         // </div>
 
 
-
+        //
         // <div className="App">
         //     <>
         //

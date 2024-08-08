@@ -1,0 +1,40 @@
+.header{
+    height:20%
+}
+.logo, .banner{
+    border: 1px solid black;
+}
+.navbar{
+    height: 10%;
+    border: 1px solid black;
+}
+.main{
+    height: 70%;
+    border: 1px solid black;
+}
+.content-main{
+    width:100%;
+    height: 100%;
+    .carousel{
+        height: 30%;
+        width:100%;
+        border: 1px solid black;
+        margin-top: 10px;
+    }
+    .list-product{
+        height: 63%;
+        width:100%;
+        border: 1px solid black;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+.left-main, .content-main, .right-main{
+    border: 1px solid black;
+
+}
+.cart,.login,.register{
+    height: 90%;
+    border: 1px solid black;
+    margin: 20px 10px;
+}
