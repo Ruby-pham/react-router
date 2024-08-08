@@ -1,15 +1,14 @@
 import './App.css';
+import {User} from "./Components-2/User/User";
 import {Route, Routes} from "react-router-dom";
-import {Home} from "./Components/Home";
-import {Login} from "./Components/Login";
-import {ProductPage} from "./Components/ProductPage";
-import {OrderPage} from "./Components/OrderPage";
-import {Register} from "./Components/Register";
-import {Admin} from "./Components/Admin";
-import {User} from "./Components/User";
-import {Student} from "./Components/Student";
-import {Add} from "./Components/Add";
-import {Detail} from "./Components/Detail";
+import {Header} from "./Components-2/User/Header";
+import {Footer} from "./Components-2/User/Footer";
+import {Main} from "./Components-2/User/Main";
+import {DetailProduct} from "./Components-2/User/DetailProduct";
+import {HotProduct} from "./Components-2/User/HotProduct";
+import {Category} from "./Components-2/User/Category";
+import {Admin} from "./Components-2/Admin";
+
 
 function App() {
     return (
@@ -18,25 +17,53 @@ function App() {
 
         <div className="App">
             <>
-
                 <Routes>
-                    <Route path={'/'} element={<Login/>}/>
-                    <Route path={'register'} element={<Register/>}/>
-                    <Route path={'home'} element={<Home/>}>
-                        <Route path={'productPage'} element={<ProductPage/>}/>
-                        <Route path={'orderPage'} element={<OrderPage/>}/>
-                    </Route>
-                    <Route path={'admin'} element={<Admin/>}>
-                        <Route path={'users'} element={<User/>}/>
-                        <Route path={'productPage'} element={<ProductPage/>}/>
-                        <Route path={'orderPage'} element={<OrderPage/>}/>
-                        <Route path={'students'} element={<Student/>}/>
-                        <Route path={'students/add'} element={<Add/>}/>
-                        <Route path={'students/detail'} element={<Detail/>}/>
+                    <Route path={'/admin'} element={<Admin/>}/>
+                    <Route path={'/user'} element={<User/>}>
+                        <Route index element={<Main/>}/>
+                        <Route path={'detail-product'} element={<DetailProduct/>}/>
+                        <Route path={'hot-product'} element={<HotProduct/>}/>
+                        <Route path={'category'} element={<Category/>}/>
                     </Route>
                 </Routes>
             </>
         </div>
+
+        // <div className="App">
+        //     <>
+        //
+        //         <Routes>
+        //             <Route path={'/home'} element={<Home/>}>
+        //                 <Route path={'list'} element={<List/>}/>
+        //                 <Route path={'add'} element={<Add/>}/>
+        //             </Route>
+        //         </Routes>
+        //     </>
+        // </div>
+
+
+
+        // <div className="App">
+        //     <>
+        //
+        //         <Routes>
+        //             <Route path={'/'} element={<Login/>}/>
+        //             <Route path={'register'} element={<Register/>}/>
+        //             <Route path={'home'} element={<Home/>}>
+        //                 <Route path={'productPage'} element={<ProductPage/>}/>
+        //                 <Route path={'orderPage'} element={<OrderPage/>}/>
+        //             </Route>
+        //             <Route path={'admin'} element={<Admin/>}>
+        //                 <Route path={'users'} element={<User/>}/>
+        //                 <Route path={'productPage'} element={<ProductPage/>}/>
+        //                 <Route path={'orderPage'} element={<OrderPage/>}/>
+        //                 <Route path={'students'} element={<Student/>}/>
+        //                 <Route path={'students/add'} element={<Add/>}/>
+        //                 <Route path={'students/detail'} element={<Detail/>}/>
+        //             </Route>
+        //         </Routes>
+        //     </>
+        // </div>
 
         //form
 

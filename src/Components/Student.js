@@ -1,17 +1,19 @@
 import {Link, useNavigate} from "react-router-dom";
 import {useState} from "react";
+ const studentList=[
+    {
+        id:'C03_1',
+        name:'Mary Smith',
+        class:'C03',
+        email:'mary@gmail.com',
+        phone:'097123456'
 
-export function Student(){
-    let[students, setStudents]=useState([
-        {
-            id:'C03_1',
-            name:'Mary Smith',
-            class:'C03',
-            email:'mary@gmail.com',
-            phone:'097123456'
+    }
+];
+ // export default studentList;
 
-        }
-    ])
+export function Student(props){
+    let[students, setStudents]=useState(studentList)
     let navigate = useNavigate()
     let handleOnClick=(student)=>{
         navigate('/admin/students/detail',{state:{student}})
@@ -22,6 +24,9 @@ export function Student(){
             <div className="student-container">
                 <Link to={'/admin/students/add'}>
                     <button>Add</button>
+                </Link>
+                <Link to={'/admin/students/add'}>
+                    <button>Detail</button>
                 </Link>
 
                 <table>
